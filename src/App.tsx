@@ -42,21 +42,21 @@ function App() {
       <div className={"container"}>
         <div>
           <div>
-            <button onClick={getUsingFetch}>Data Using Fetch</button>
+            {loading.fetch && <p>Loading data using fetch...</p>}
+            <button class="button-64" onClick={getUsingFetch}>Data Using Fetch</button>
           </div>
-          {loading.fetch && <p>Loading data using fetch...</p>}
           <div>
-            <h1>Data using Fetch</h1>
+            <h1>Get Data using Fetch</h1>
             {fetchData && <pre>{JSON.stringify(fetchData, null, 2)}</pre>}
           </div>
         </div>
         <div>
           <div>
-            <button onClick={getUsingAxios}>Data Using Axios</button>
+            {loading.axios && <p>Loading data using axios...</p>}
+            <button class="button-64" onClick={getUsingAxios}>Data Using Axios</button>
           </div>
-          <div>{loading.axios && <p>Loading data using axios...</p>}</div>
           <div>
-            <h1>Data using Axios</h1>
+            <h1>Get Data using Axios</h1>
             {axiosData && <pre>{JSON.stringify(axiosData, null, 2)}</pre>}
           </div>
         </div>
